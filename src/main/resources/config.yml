@@ -1,0 +1,6 @@
+messages:
+  welcome_to_server: "&2Welcome to server &l%s!"
+  you_must_supply_server: "&4You must supply server."
+  you_must_supply_player: "&4You must supply player."
+  player_not_found: "&4Player &l%s offline or never play on this server."
+  message_not_found: "&4Message &l%s not found."

@@ -1,0 +1,9 @@
+name: ${project.artifactId}
+main: ${project.groupId}.${project.artifactId}
+author: Maxim Vatentsov <admin@gtn-craft.ru>
+version: ${project.version}
+
+commands:
+   server:
+      description: Teleport to another server
+      usage: /<command> <server> [player]

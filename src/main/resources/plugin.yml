@@ -7,3 +7,8 @@ commands:
    server:
       description: Teleport to another server
       usage: /<command> <server> [player]
+
+permissions:
+   bungeecord.server.other:
+      description: Allow send other player to server.
+      default: op

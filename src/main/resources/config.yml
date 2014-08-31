@@ -4,3 +4,4 @@ messages:
   you_must_supply_player: "&4You must supply player."
   player_not_found: "&4Player &l%s offline or never play on this server."
   message_not_found: "&4Message &l%s not found."
+  you_dont_have_permissions: "&4You don't have permissions to send player &l%s to server &l%s."

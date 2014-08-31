@@ -29,7 +29,15 @@ class CommandServer implements CommandExecutor, TabExecutor {
         String name;
 
         if (sender instanceof Player) {
-            name = sender.getName();
+            if (args.length > 1) {
+                name = args[1];
+                if ((!sender.getName().equalsIgnoreCase(name)) || (!sender.hasPermission("bungeecord.server.other"))) {
+                    sender.sendMessage(Messages.get(Message.you_dont_have_permissions, name, server));
+                    return true;
+                }
+            } else {
+                name = sender.getName();
+            }
         } else {
             if (args.length < 2) {
                 sender.sendMessage(Messages.get(Message.you_must_supply_player));

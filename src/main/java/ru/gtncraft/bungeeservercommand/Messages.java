@@ -25,8 +25,8 @@ public class Messages {
     public static String get(Message message, Object... args) {
         String text = messages.get(message);
         if (text == null) {
-            return String.format(messages.get(Message.message_not_found), message.name());
+            text = message.toString();
         }
-        return String.format(messages.get(message), args);
+        return String.format(text, args);
     }
 }

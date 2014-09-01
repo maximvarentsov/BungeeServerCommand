@@ -2,10 +2,7 @@ package ru.gtncraft.bungeeservercommand;
 
 import com.google.common.collect.ImmutableList;
 import org.bukkit.Bukkit;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.command.TabExecutor;
+import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 
 import java.util.List;
@@ -15,7 +12,9 @@ class CommandServer implements CommandExecutor, TabExecutor {
 
     public CommandServer(final BungeeServerCommand plugin) {
         this.plugin = plugin;
-        Bukkit.getServer().getPluginCommand("server").setExecutor(this);
+        PluginCommand command = Bukkit.getServer().getPluginCommand("server");
+        command.setExecutor(this);
+        command.setPermission("bungeecord.server.use");
     }
 
     @Override
@@ -32,7 +31,7 @@ class CommandServer implements CommandExecutor, TabExecutor {
             if (args.length > 1) {
                 name = args[1];
                 if ((!sender.getName().equalsIgnoreCase(name)) || (!sender.hasPermission("bungeecord.server.other"))) {
-                    sender.sendMessage(Messages.get(Message.you_dont_have_permissions, name, server));
+                    sender.sendMessage(command.getPermissionMessage());
                     return true;
                 }
             } else {

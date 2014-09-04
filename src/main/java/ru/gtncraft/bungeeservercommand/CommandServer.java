@@ -14,14 +14,13 @@ class CommandServer implements CommandExecutor, TabExecutor {
         this.plugin = plugin;
         PluginCommand command = Bukkit.getServer().getPluginCommand("server");
         command.setExecutor(this);
-        command.setPermission("bungeecord.server.use");
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args.length == 0) {
             sender.sendMessage(Messages.get(Message.you_must_supply_server));
-            return true;
+            return false;
         }
 
         String server = args[0];

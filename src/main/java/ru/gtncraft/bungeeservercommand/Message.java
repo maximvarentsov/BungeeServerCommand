@@ -1,12 +1,6 @@
 package ru.gtncraft.bungeeservercommand;
 
 public enum Message {
-    welcome_to_server {
-        @Override
-        public String toString() {
-            return "&2Welcome to server &l%s!";
-        }
-    },
     you_must_supply_server {
         @Override
         public String toString() {

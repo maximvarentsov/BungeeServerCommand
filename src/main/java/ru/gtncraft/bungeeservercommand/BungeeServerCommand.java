@@ -21,9 +21,9 @@ public final class BungeeServerCommand extends JavaPlugin {
 
     public void connect(final Player player, final String server) {
         ByteArrayDataOutput out = ByteStreams.newDataOutput();
-        out.writeUTF("Connect");
+        out.writeUTF("ConnectOther");
+        out.writeUTF(player.getName());
         out.writeUTF(server);
-        out.writeUTF(Messages.get(Message.welcome_to_server, server));
         player.sendPluginMessage(this, channel, out.toByteArray());
     }
 }
